@@ -1,5 +1,8 @@
 import arrow1Img from "@/assets/arrow1.svg";
-import arrow2Img from "@/assets/arrow2.svg";
+
+// Design canvas: 1440 × 900px
+// Arrow 1 is NOT part of the HeroComposition — it stays independently
+// positioned so it can sit near the dock regardless of hero group scaling.
 
 export const DecorativeArrows = () => {
   return (
@@ -10,8 +13,8 @@ export const DecorativeArrows = () => {
         alt="Arrow 1"
         style={{
           position: "absolute",
-          left: "479px",
-          top: "723px",
+          left: "33.26vw",   // 479 / 1440
+          top: "88vh",       // pushed down toward dock
           transform: "rotate(-25deg)",
         }}
       />
@@ -19,8 +22,8 @@ export const DecorativeArrows = () => {
       <div
         style={{
           position: "absolute",
-          left: "479px",
-          top: "685px",
+          left: "33.26vw",   // 479 / 1440
+          top: "83.78vh",    // 4.22vh above arrow
           transform: "translate(-50%, 0) rotate(-12deg)",
           fontFamily: "FuturaHandwritten",
           fontSize: "14px",
@@ -32,43 +35,6 @@ export const DecorativeArrows = () => {
         professional snooping
         <br />
         allowed 👀
-      </div>
-      {/* Arrow 2 */}
-      <img
-        src={arrow2Img}
-        alt="Arrow 2"
-        className="absolute pointer-events-none select-none z-35"
-        style={{
-          left: "891px",
-          top: "241px",
-          transform: "rotate(-12deg)",
-        }}
-        draggable={false}
-      />
-      {/* Text 2 (above Arrow 2) */}
-      <div
-        style={{
-          position: "absolute",
-          left: "946px",
-          top: "215px",
-          transform: "translate(-50%, 0)",
-          fontFamily: "FuturaHandwritten",
-          fontSize: "14px",
-          lineHeight: "25px",
-          color: "#1E1E1E",
-          textAlign: "center",
-        }}
-      >
-        nice to meet you
-        <span
-          style={{
-            display: "inline-block",
-            transform: "rotate(90deg)",
-            marginLeft: "8px",
-          }}
-        >
-          :)
-        </span>
       </div>
     </>
   );

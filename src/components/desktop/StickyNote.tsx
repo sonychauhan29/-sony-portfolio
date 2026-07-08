@@ -3,15 +3,10 @@ import dashesImg from "@/assets/dashes.svg";
 import starImg from "@/assets/star.svg";
 import sunImg from "@/assets/sun.svg";
 
+// Positioning is handled by the parent HeroComposition wrapper.
+// This component is a self-contained relative block.
 export const StickyNote = () => (
-  <div
-    className="absolute pointer-events-none select-none z-30"
-    style={{
-      left: "239px",
-      top: "290px",
-      transform: "rotate(-12deg)",
-    }}
-  >
+  <div className="relative pointer-events-none select-none">
     <img src={stickyImg} alt="Sticky note" draggable={false} className="relative" />
     <img src={sunImg} alt="Sun" className="absolute top-[14px] right-[26px]" draggable={false} />
     <div className="absolute inset-0 pt-11 px-8 flex justify-center">

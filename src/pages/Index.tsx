@@ -1,8 +1,6 @@
 import { useCallback, useState } from "react";
 import { MenuBar } from "@/components/desktop/MenuBar";
-import { StickyNote } from "@/components/desktop/StickyNote";
-import { PolaroidPhoto } from "@/components/desktop/PolaroidPhoto";
-import { Hero } from "@/components/desktop/Hero";
+import { HeroComposition } from "@/components/desktop/HeroComposition";
 import { DecorativeArrows } from "@/components/desktop/DecorativeArrows";
 import { DesktopIcons, DesktopIconsMobile } from "@/components/desktop/DesktopIcons";
 import { Dock } from "@/components/desktop/Dock";
@@ -94,9 +92,7 @@ const Index = () => {
       <MenuBar />
 
       <div className="absolute inset-0 pt-7">
-        <Hero />
-        <StickyNote />
-        <PolaroidPhoto />
+        <HeroComposition />
         <DecorativeArrows />
         <DesktopIcons onOpenFolder={handleFolderOpen} />
         <DesktopIconsMobile onOpenFolder={handleFolderOpen} />

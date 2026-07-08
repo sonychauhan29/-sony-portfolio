@@ -96,8 +96,8 @@ export const DesktopIcons = ({ onOpenFolder }: Props) => {
       {/* Single column rail — one absolute anchor, 160px from top, 50px gap between groups */}
       <div
         style={{ 
-          top: "160px", 
-          right: "70px",
+          top: "17.78vh",   // 160 / 900
+          right: "4.86vw",  // 70 / 1440
           transform: "scale(0.8)",
           transformOrigin: "top right",
         }}
