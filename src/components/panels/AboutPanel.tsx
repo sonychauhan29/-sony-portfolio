@@ -95,7 +95,7 @@ export const AboutPanel = (p: Props) => (
       <div className="w-full">
         <p
           style={{
-            fontFamily: "SF Pro Text",
+            fontFamily: "Inter",
             fontSize: "12px",
             lineHeight: "18.7px",
             color: "#464545",
@@ -113,7 +113,7 @@ export const AboutPanel = (p: Props) => (
       <div className="mt-6">
         <p
           style={{
-            fontFamily: "SF Pro Text",
+            fontFamily: "Inter",
             fontSize: "12px",
             lineHeight: "18.7px",
             color: "#464545",
