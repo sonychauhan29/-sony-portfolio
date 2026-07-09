@@ -155,7 +155,7 @@ export const HeroComposition = () => {
           textAlign: "center",
         }}
       >
-        nice to meet you
+        nice to see you
         <span
           style={{
             display: "inline-block",

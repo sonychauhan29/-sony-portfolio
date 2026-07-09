@@ -16,6 +16,27 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Akasha";
+  src: url("./assets/fonts/AkashaRegular-Rprn6.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Ams Bhagyshri";
+  src: url("./assets/fonts/Ams Bhagyshri.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Kalam";
+  src: url("./assets/fonts/Kalam-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */
