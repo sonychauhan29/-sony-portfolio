@@ -1,7 +1,22 @@
+import { useState, useEffect } from "react";
 import { FolderPng, PdfPng, FigmaPng, PhotoshopPng, IllustratorPng, AfterEffectsPng, StarburstPng, HeartPng, PaintingPng, CameraPng, CoffeePng, PhoneHandPng, Laptop1Png, Laptop2Png } from "../icons/PngIcons";
 import type { PanelKey } from "../panels/types";
 
 type Props = { onOpenFolder: (name: PanelKey) => void };
+
+// Design canvas constants for scaling (same as HeroComposition)
+const CANVAS_W = 1440;
+const CANVAS_H = 900;
+
+/**
+ * Computes the uniform scale factor for the folder group
+ * based on viewport size, similar to HeroComposition
+ */
+function getFolderScale(): number {
+  const scaleX = window.innerWidth / CANVAS_W;
+  const scaleY = window.innerHeight / CANVAS_H;
+  return Math.min(scaleX, scaleY);
+}
 
 type Item = {
   label: string;
@@ -91,18 +106,32 @@ const NotDesigningFolder = ({ size, onClick }: { size: number; onClick: () => vo
 };
 
 export const DesktopIcons = ({ onOpenFolder }: Props) => {
+  const [scale, setScale] = useState<number>(1);
+
+  useEffect(() => {
+    const update = () => setScale(getFolderScale());
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
   return (
     <div className="hidden sm:block absolute inset-0 pointer-events-none z-20 select-none">
       {/* Single column rail — one absolute anchor, 160px from top, 50px gap between groups */}
       <div
-        style={{ 
-          top: "17.78vh",   // 160 / 900
-          right: "4.86vw",  // 70 / 1440
-          transform: "scale(0.8)",
-          transformOrigin: "top right",
+        style={{
+          top: "160px",   // Fixed pixel position to prevent vertical drift
+          right: "70px",  // Fixed pixel position from design canvas (70 / 1440)
         }}
-        className="absolute flex flex-col items-center gap-[50px]"
+        className="absolute"
       >
+        <div
+          style={{
+            transform: `scale(${scale})`,
+            transformOrigin: "top right",
+          }}
+          className="flex flex-col items-center gap-[50px]"
+        >
         {/* Favourite Projects */}
         <div className="flex flex-col items-center gap-1 w-[90px] pointer-events-auto">
           <ProjectsFolder size={60} onClick={() => onOpenFolder("work")} />
@@ -137,6 +166,7 @@ export const DesktopIcons = ({ onOpenFolder }: Props) => {
           <PdfPng style={{ width: 60, height: 60 }} />
           <span className="text-[16px] text-foreground/90 text-center leading-[22px] font-futura">resume</span>
         </a>
+        </div>
       </div>
     </div>
   );

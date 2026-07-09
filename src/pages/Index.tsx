@@ -3,7 +3,7 @@ import { MenuBar } from "@/components/desktop/MenuBar";
 import { HeroComposition } from "@/components/desktop/HeroComposition";
 import { DecorativeArrows } from "@/components/desktop/DecorativeArrows";
 import { DesktopIcons, DesktopIconsMobile } from "@/components/desktop/DesktopIcons";
-import { Dock } from "@/components/desktop/Dock";
+import { DockWithArrow } from "@/components/desktop/DockWithArrow";
 import { FinderPanel } from "@/components/panels/FinderPanel";
 import { WorkPanel } from "@/components/panels/WorkPanel";
 import { AboutPanel } from "@/components/panels/AboutPanel";
@@ -108,7 +108,7 @@ const Index = () => {
         </div>
       )}
 
-      <Dock onOpen={open} />
+      <DockWithArrow onOpen={open} />
     </main>
   );
 };

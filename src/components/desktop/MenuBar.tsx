@@ -4,7 +4,7 @@ import { Wifi, BatteryFull, Search } from "lucide-react";
 const items = ["Finder", "File", "Edit", "View", "Go", "Window", "Help"];
 
 export const MenuBar = () => (
-  <div className="menubar-glass fixed top-0 left-0 right-0 z-50 h-7 px-3 flex items-center justify-between text-white text-[13px] select-none">
+  <div className="menubar-glass fixed top-0 left-0 right-0 z-50 h-7 px-3 flex items-center justify-between text-[13px] select-none" style={{ color: "#1E1E1E" }}>
     <div className="flex items-center gap-4">
       <AppleLogo className="w-3.5 h-3.5" />
       <span className="font-semibold">Finder</span>

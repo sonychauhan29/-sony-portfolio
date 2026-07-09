@@ -50,9 +50,11 @@ export const HeroComposition = () => {
         // top: 50% inside the inset-0 container → vertical mid-point of full viewport.
         // We nudge down by half the menu-bar height so the centre aligns with
         // the mid-point of the *content* area (28px – 100vh).
+        // Then subtract 40px to move the entire composition upward.
+        // Shift right by 40px.
         position: "absolute",
-        left: "50%",
-        top: `calc(50% + ${MENU_BAR_H / 2}px)`,
+        left: "calc(50% + 40px)",
+        top: `calc(50% + ${MENU_BAR_H / 2}px - 40px)`,
         width: `${CANVAS_W}px`,
         height: `${CANVAS_H}px`,
         // translate(-50%,-50%) brings the canvas centre to the anchor point;
@@ -111,12 +113,12 @@ export const HeroComposition = () => {
         </div>
       </div>
 
-      {/* ── Hero text (left=781, vertically centred in the canvas) ──────── */}
-      {/* left = polaroidLeft(430) + polaroidWidth(250) + gap(101) = 781   */}
+      {/* ── Hero text (left=771, vertically centred in the canvas) ──────── */}
+      {/* left = polaroidLeft(430) + polaroidWidth(250) + gap(101) - 10 = 771   */}
       <div
         className="absolute z-20"
         style={{
-          left: "781px",
+          left: "771px",
           top: "50%",
           transform: "translateY(-50%)",
         }}
@@ -124,26 +126,26 @@ export const HeroComposition = () => {
         <Hero />
       </div>
 
-      {/* ── Arrow 2 (left=891, top=270 — matches the 30vh nudge) ─────────  */}
+      {/* ── Arrow 2 (left=881, top=281 — moved 11px down) ─────────  */}
       <img
         src={arrow2Img}
         alt="Arrow 2"
         className="absolute pointer-events-none select-none"
         style={{
-          left: "891px",
-          top: "270px",
+          left: "881px",
+          top: "281px",
           zIndex: 35,
           transform: "rotate(-12deg)",
         }}
         draggable={false}
       />
 
-      {/* ── Arrow 2 text (left=946, top=243; 27 px gap above the arrow) ── */}
+      {/* ── Arrow 2 text (left=936, top=254; moved 11px down) ── */}
       <div
         className="absolute"
         style={{
-          left: "946px",
-          top: "243px",
+          left: "936px",
+          top: "254px",
           zIndex: 35,
           transform: "translate(-50%, 0)",
           fontFamily: "FuturaHandwritten",
